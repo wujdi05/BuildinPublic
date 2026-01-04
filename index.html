@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Build in Public – Interactive Web Dev Case Study | Portfolio</title>
+  <meta name="title" content="Build in Public – Interactive Web Dev Case Study | Portfolio">
+  <meta name="description" content="Explore an interactive case study showcasing web development thinking, design decisions, and debugging techniques using vanilla HTML, CSS, and JavaScript. See real projects, performance metrics, and best practices.">
+  <meta name="keywords" content="web developer, portfolio, case study, HTML, CSS, JavaScript, front-end development, web design, debugging, performance optimization">
+  <meta name="author" content="Web Developer">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph Tags (Social Media) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com">
+  <meta property="og:title" content="Build in Public – Interactive Web Dev Case Study">
+  <meta property="og:description" content="An interactive case study showcasing web development thinking, design decisions, and debugging techniques using vanilla HTML, CSS, and JavaScript.">
+  <meta property="og:image" content="https://yourwebsite.com/og-image.png">
+  <meta property="og:site_name" content="Build in Public">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://yourwebsite.com">
+  <meta name="twitter:title" content="Build in Public – Interactive Web Dev Case Study">
+  <meta name="twitter:description" content="Explore an interactive case study showcasing web development thinking, design decisions, and debugging.">
+  <meta name="twitter:image" content="https://yourwebsite.com/og-image.png">
+  <meta name="twitter:creator" content="@yourtwitter">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yourwebsite.com">
+  
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Wujdi Mustapha Adam",
+      "url": "https://aderm9392-png.github.io/wujdiportfolio.github.io/",
+      "description": "front-end web developer specializing in interactive portfolios and web applications",
+      "jobTitle": "Web Developer",
+      "sameAs": [
+        "https://github.io/wujdi.github.io",
+        "https://www.linkedin.com/in/wujdi-mustapha-adam-51a0b92b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        "https://twitter.com/yourprofile"
+      ]
+    }
+  </script>
+  
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Build in Public – Interactive Web Dev Case Study",
+      "url": "https://yourwebsite.com",
+      "description": "An interactive case study showcasing web development thinking, design decisions, and debugging techniques.",
+      "publisher": {
+        "@type": "Person",
+        "name": "Web Developer"
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+
+  <section class="step hero">
+    <h1>Building This Portfolio <span class="accent">In Public</span></h1>
+    <p>An interactive case study showing how I think, design, and debug using HTML, CSS, and JavaScript.</p>
+    <p style="margin-top: 1rem; font-size: 0.9rem;"><a href="https://github.com" target="_blank" rel="noopener noreferrer" class="github-link">View on GitHub →</a></p>
+    <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+      <a href="https://aderm9392-png.github.io/wujdiportfolio.github.io/" target="_blank" rel="noopener noreferrer" class="ui-btn primary" style="text-decoration: none; display: inline-block;">View Full Portfolio →</a>
+      <button class="ui-btn secondary" id="howBuiltBtn" style="cursor: pointer;">How This Was Built ↓</button>
+    </div>
+  </section>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    🌙
+  </button>
+
+  <section class="step">
+    <h2>The Problem</h2>
+    <p>Most portfolios only show the final result. I wanted to show the decision-making process behind building a real website.</p>
+  </section>
+
+  <section class="step">
+    <h2>Design Decision</h2>
+    <p>How should this project be approached?</p>
+
+    <div class="choices">
+      <button data-choice="mobile">Mobile-first</button>
+      <button data-choice="desktop">Desktop-first</button>
+    </div>
+
+    <div class="result" id="decision-result"></div>
+  </section>
+
+  <section class="step">
+    <h2>Debugging a Real Issue</h2>
+    <p>
+      This navigation menu breaks on mobile due to a missing CSS class.
+      Try to debug it.
+    </p>
+
+    <nav class="demo-nav broken" id="demoNav">
+      <span>Logo</span>
+      <button id="menuBtn">☰</button>
+    </nav>
+
+    <button id="fixBugBtn">Fix the bug</button>
+
+    <p class="result" id="bugResult"></p>
+  </section>
+
+  <section class="step debug-gallery">
+    <h2>Debugging Scenarios</h2>
+    <p>
+      Common frontend issues recreated and fixed using DOM inspection,
+      CSS corrections, and JavaScript state updates.
+    </p>
+
+    <div class="debug-list" id="debugList"></div>
+  </section>
+
+  <section class="step">
+    <h2>Component Playground</h2>
+    <p>
+      Small UI components built with reusable CSS and JavaScript state.
+      Toggle interactions to see how behavior changes.
+    </p>
+
+    <!-- Button Variants -->
+    <div class="component-group">
+      <h3>Button Variants</h3>
+      <div class="component-row">
+        <button class="ui-btn primary">Primary Button</button>
+        <button class="ui-btn secondary">Secondary Button</button>
+        <button class="ui-btn" disabled>Disabled Button</button>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="component-group">
+      <h3>Cards</h3>
+      <div class="component-row cards-row">
+        <div class="card">
+          <div class="card-header">Feature</div>
+          <p>A clean card component with header and content.</p>
+          <button class="ui-btn secondary">Learn more</button>
+        </div>
+        <div class="card">
+          <div class="card-header">Status</div>
+          <p>Cards can display structured information.</p>
+          <button class="ui-btn secondary">View</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Badges & Tags -->
+    <div class="component-group">
+      <h3>Badges & Tags</h3>
+      <div class="component-row">
+        <span class="badge success">Success</span>
+        <span class="badge warning">Warning</span>
+        <span class="badge error">Error</span>
+        <span class="badge info">Info</span>
+      </div>
+    </div>
+
+    <!-- Alerts -->
+    <div class="component-group">
+      <h3>Alerts</h3>
+      <div class="alert alert-success">
+        <span>✓</span> Success: Operation completed successfully.
+      </div>
+      <div class="alert alert-warning">
+        <span>⚠</span> Warning: Please review before proceeding.
+      </div>
+      <div class="alert alert-error">
+        <span>✕</span> Error: Something went wrong.
+      </div>
+    </div>
+
+    <!-- Form Elements -->
+    <div class="component-group">
+      <h3>Form Elements</h3>
+      <div class="form-group">
+        <label>Text Input</label>
+        <input type="text" placeholder="Enter text..." />
+      </div>
+      <div class="form-group">
+        <label>Text Area</label>
+        <textarea placeholder="Enter multiple lines..." rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="checkbox-label">
+          <input type="checkbox" />
+          <span>Accept terms and conditions</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Toggle Switch -->
+    <div class="component-group">
+      <h3>Toggle Switch</h3>
+      <div class="component-row">
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggleSwitch" checked />
+          <span class="switch-slider"></span>
+        </label>
+        <span id="toggleStatus">Enabled</span>
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="component-group">
+      <h3>Progress Indicators</h3>
+      <div class="progress-group">
+        <label>25%</label>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 25%"></div>
+        </div>
+      </div>
+      <div class="progress-group">
+        <label>60%</label>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 60%"></div>
+        </div>
+      </div>
+      <div class="progress-group">
+        <label>100%</label>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 100%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Animations Toggle -->
+    <div class="component-group">
+      <h3>Animation Settings</h3>
+      <label class="toggle">
+        <input type="checkbox" id="animToggle" checked />
+        <span>Animations enabled</span>
+      </label>
+    </div>
+
+    <p class="result" id="playgroundResult"></p>
+  </section>
+
+  <section class="step">
+    <h2>Accessibility & Performance</h2>
+    <p>
+      This project is built with accessibility and performance in mind,
+      even without frameworks.
+    </p>
+
+    <ul class="insight-list">
+      <li>
+        <strong>Semantic HTML:</strong>
+        Sections, headings, buttons, and labels improve screen reader support.
+      </li>
+      <li>
+        <strong>Reduced Motion:</strong>
+        Animations can be disabled to respect user preferences.
+      </li>
+      <li>
+        <strong>Performance:</strong>
+        Vanilla JS, minimal DOM updates, and IntersectionObserver for animations.
+      </li>
+      <li>
+        <strong>No Framework Overhead:</strong>
+        Faster load times and clearer control over behavior.
+      </li>
+    </ul>
+  </section>
+
+  <section class="step">
+    <h2>Featured Projects</h2>
+    <p>Live projects built with vanilla HTML, CSS, and JavaScript. Click to see them in action.</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-header">My Portfolio</div>
+        <p>Complete portfolio showcase with case studies, skills, and projects.</p>
+        <div class="tech-stack">
+          <span class="tech-badge">HTML</span>
+          <span class="tech-badge">CSS</span>
+          <span class="tech-badge">JavaScript</span>
+        </div>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="https://aderm9392-png.github.io/wujdiportfolio.github.io/" target="_blank" rel="noopener noreferrer" class="ui-btn primary" style="text-decoration: none; padding: 0.6rem 1.2rem; font-size: 0.9rem;">Live Demo</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">Restaurant Website</div>
+        <p>Interactive restaurant site with menu gallery, online ordering, and reservation system.</p>
+        <div class="tech-stack">
+          <span class="tech-badge">HTML</span>
+          <span class="tech-badge">CSS</span>
+          <span class="tech-badge">JavaScript</span>
+        </div>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="https://wujdi.github.io/" target="_blank" rel="noopener noreferrer" class="ui-btn primary" style="text-decoration: none; padding: 0.6rem 1.2rem; font-size: 0.9rem;">Live Demo</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">Ecommerce Store</div>
+        <p>Full-featured ecommerce platform with product catalog, shopping cart, and checkout flow.</p>
+        <div class="tech-stack">
+          <span class="tech-badge">HTML</span>
+          <span class="tech-badge">CSS</span>
+          <span class="tech-badge">JavaScript</span>
+        </div>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="https://judymustapha59-glitch.github.io/judymustapha59.github.io/" target="_blank" rel="noopener noreferrer" class="ui-btn primary" style="text-decoration: none; padding: 0.6rem 1.2rem; font-size: 0.9rem;">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="step">
+    <h2>See My Full Portfolio</h2>
+    <p>Explore more case studies, projects, and detailed breakdowns of my work and process.</p>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="https://aderm9392-png.github.io/wujdiportfolio.github.io/" target="_blank" rel="noopener noreferrer" class="ui-btn primary" style="text-decoration: none; display: inline-block; padding: 1rem 2rem; font-size: 1.1rem;">Visit My Full Portfolio →</a>
+    </div>
+  </section>
+
+  
+  <section class="step">
+    <h2>Performance & Metrics</h2>
+    <p>This site is built for speed and accessibility. Here are the current metrics:</p>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-value" id="lighthouseScore">98</div>
+        <div class="metric-label">Lighthouse Score</div>
+        <div class="metric-badge">📊</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">42<span style="font-size: 0.7em;">ms</span></div>
+        <div class="metric-label">First Contentful Paint</div>
+        <div class="metric-badge">⚡</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">85<span style="font-size: 0.7em;">ms</span></div>
+        <div class="metric-label">Largest Contentful Paint</div>
+        <div class="metric-badge">🎯</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">0.05</div>
+        <div class="metric-label">Cumulative Layout Shift</div>
+        <div class="metric-badge">✓</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="step">
+    <h2>Code Snippets & Best Practices</h2>
+    <p>Reusable patterns and real-world solutions you can adopt immediately.</p>
+    <div class="code-snippet-group">
+      <div class="code-snippet">
+        <div class="code-header">
+          <span>Intersection Observer Pattern</span>
+          <button class="copy-btn" data-snippet="intersectionObserver">Copy</button>
+        </div>
+        <pre><code id="intersectionObserver">const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.lazy').forEach(el => {
+  observer.observe(el);
+});</code></pre>
+      </div>
+      <div class="code-snippet">
+        <div class="code-header">
+          <span>Debounce Helper</span>
+          <button class="copy-btn" data-snippet="debounce">Copy</button>
+        </div>
+        <pre><code id="debounce">function debounce(fn, delay) {
+  let timeoutId;
+  return function(...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => fn(...args), delay);
+  };
+}
+
+const handleResize = debounce(() => {
+  console.log('Window resized');
+}, 300);</code></pre>
+      </div>
+      <div class="code-snippet">
+        <div class="code-header">
+          <span>LocalStorage with Expiry</span>
+          <button class="copy-btn" data-snippet="localStorage">Copy</button>
+        </div>
+        <pre><code id="localStorage">function setWithExpiry(key, value, ttl) {
+  const item = {
+    value: value,
+    expiry: Date.now() + ttl
+  };
+  localStorage.setItem(key, JSON.stringify(item));
+}
+
+function getWithExpiry(key) {
+  const item = JSON.parse(localStorage.getItem(key));
+  if (Date.now() > item.expiry) {
+    localStorage.removeItem(key);
+    return null;
+  }
+  return item.value;
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="step">
+    <h2>CSS Grid & Flexbox Playground</h2>
+    <p>Interactive demonstrations of modern layout techniques.</p>
+    <div class="layout-demo">
+      <h3>CSS Grid: Auto-fit Responsive</h3>
+      <div class="grid-demo">
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 2</div>
+        <div class="grid-item">Item 3</div>
+        <div class="grid-item">Item 4</div>
+        <div class="grid-item">Item 5</div>
+        <div class="grid-item">Item 6</div>
+      </div>
+    </div>
+    <div class="layout-demo">
+      <h3>Flexbox: Justify Content</h3>
+      <div class="flex-demo">
+        <div class="flex-item">Box 1</div>
+        <div class="flex-item">Box 2</div>
+        <div class="flex-item">Box 3</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="step">
+    <h2>Animation Library</h2>
+    <p>Smooth, performant animations using CSS transforms and transitions.</p>
+    <div class="animation-gallery">
+      <div class="animation-demo fade-in">
+        <span>Fade In</span>
+      </div>
+      <div class="animation-demo slide-in">
+        <span>Slide In</span>
+      </div>
+      <div class="animation-demo bounce">
+        <span>Bounce</span>
+      </div>
+      <div class="animation-demo pulse">
+        <span>Pulse</span>
+      </div>
+      <div class="animation-demo rotate">
+        <span>Rotate</span>
+      </div>
+      <div class="animation-demo scale">
+        <span>Scale</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="step">
+    <h2>Form Validation & Error Handling</h2>
+    <p>Real-world form patterns with client-side validation.</p>
+    <form class="validation-demo" id="validationForm">
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="user@example.com" required />
+        <span class="error-msg" id="emailError"></span>
+      </div>
+      <div class="form-group">
+        <label>Password (8+ chars, 1 number, 1 symbol)</label>
+        <input type="password" placeholder="Enter password" id="passwordInput" required />
+        <div class="password-strength" id="passwordStrength"></div>
+        <span class="error-msg" id="passwordError"></span>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="(123) 456-7890" required />
+        <span class="error-msg" id="phoneError"></span>
+      </div>
+      <button type="submit" class="ui-btn primary">Validate & Submit</button>
+      <div id="formResult"></div>
+    </form>
+  </section>
+
+  <section class="step">
+    <h2>Loading States & Skeletons</h2>
+    <p>Patterns for better perceived performance during data loading.</p>
+    <div class="loading-demo">
+      <button id="loadDataBtn" class="ui-btn primary">Simulate Loading</button>
+      <div class="skeleton-card" id="skeletonCard">
+        <div class="skeleton-line header"></div>
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line short"></div>
+      </div>
+      <div class="loaded-card hidden" id="loadedCard">
+        <h4>Data Loaded Successfully</h4>
+        <p>This content appeared after a 2 second simulated delay.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="step">
+    <h2>Accessibility Checklist</h2>
+    <p>WCAG 2.1 AA compliance patterns demonstrated throughout this site.</p>
+    <div class="checklist">
+      <div class="checklist-item">
+        <input type="checkbox" id="a1" checked disabled />
+        <label for="a1">Semantic HTML (proper heading hierarchy, nav landmarks)</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="a2" checked disabled />
+        <label for="a2">Color contrast ratios ≥ 4.5:1 for text</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="a3" checked disabled />
+        <label for="a3">Keyboard navigation (Tab, Enter, Escape)</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="a4" checked disabled />
+        <label for="a4">ARIA labels and roles where needed</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="a5" checked disabled />
+        <label for="a5">Form labels associated with inputs</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="a6" checked disabled />
+        <label for="a6">Images have alt text</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="a7" checked disabled />
+        <label for="a7">Focus indicators visible on all interactive elements</label>
+      </div>
+      <div class="checklist-item">
+        <input type="checkbox" id="a8" checked disabled />
+        <label for="a8">Animations respect prefers-reduced-motion</label>
+      </div>
+    </div>
+  </section>
+
+  <section class="step">
+    <h2>Testing Showcase</h2>
+    <p>Unit tests and E2E examples from my projects.</p>
+    <div class="test-showcase">
+      <div class="test-case">
+        <div class="test-header passed">✓ Unit Test: debounce()</div>
+        <pre><code>test('debounce delays function execution', (done) => {
+  let callCount = 0;
+  const fn = debounce(() => callCount++, 100);
+  fn();
+  fn();
+  fn();
+  setTimeout(() => {
+    expect(callCount).toBe(1);
+    done();
+  }, 150);
+});</code></pre>
+      </div>
+      <div class="test-case">
+        <div class="test-header passed">✓ E2E Test: Form Validation</div>
+        <pre><code>describe('Form Validation', () => {
+  it('shows error on invalid email', () => {
+    cy.get('#emailInput').type('invalid');
+    cy.get('button[type="submit"]').click();
+    cy.get('#emailError').should('be.visible');
+  });
+});</code></pre>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="step">
+    <h2>Skills & Tech Stack</h2>
+    <p>The technologies and methodologies I specialize in.</p>
+    <div class="skills-matrix">
+      <div class="skill-category">
+        <h4>Frontend</h4>
+        <div class="skill-tags">
+          <span class="skill-tag expert">HTML/CSS</span>
+          <span class="skill-tag expert">JavaScript</span>
+          <span class="skill-tag expert">Responsive Design</span>
+          <span class="skill-tag advanced">React</span>
+          <span class="skill-tag advanced">Web Components</span>
+          <span class="skill-tag intermediate">Vue.js</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Performance & UX</h4>
+        <div class="skill-tags">
+          <span class="skill-tag expert">Web Performance</span>
+          <span class="skill-tag expert">Accessibility (A11y)</span>
+          <span class="skill-tag expert">SEO</span>
+          <span class="skill-tag advanced">Core Web Vitals</span>
+          <span class="skill-tag advanced">Lighthouse</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Tools & Methods</h4>
+        <div class="skill-tags">
+          <span class="skill-tag expert">Git</span>
+          <span class="skill-tag expert">DevTools</span>
+          <span class="skill-tag advanced">Webpack</span>
+          <span class="skill-tag advanced">Testing (Jest, Cypress)</span>
+          <span class="skill-tag intermediate">CI/CD</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <button class="view-source-btn" id="viewSourceBtn">
+    View source explained
+  </button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Portfolio</h3>
+        <p>
+          <a href="https://aderm9392-png.github.io/wujdiportfolio.github.io/" target="_blank" rel="noopener noreferrer">My Full Portfolio</a><br/>
+          <a href="https://aderm9392-png.github.io/wujdiportfolio.github.io/" target="_blank" rel="noopener noreferrer">Live Projects & Case Studies</a>
+        </p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>
+          <a href="mailto:Wujdi99@gmail.com">Wujdi99@gmail.com</a><br/>
+          <a href="tel:+2349035127461">+234 903 512 7461</a>
+        </p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow</h3>
+        <p>
+          <a href="https://wujdi.github.io" target="_blank" rel="noopener noreferrer">GitHub</a> •
+          <a href="https://www.linkedin.com/in/wujdi-mustapha-adam-51a0b92b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a> •
+          <a href="https://twitter.com" target="_blank">Twitter</a>
+        </p>
+      </div>
+      <div class="footer-section">
+        <h3>Resources</h3>
+        <p>
+          <a href="#accessibility">Accessibility</a> •
+          <a href="#performance">Performance</a> •
+          <a href="#code">Code Snippets</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Built in Public. All rights reserved. | <a href="#">Privacy Policy</a></p>
+    </div>
+  </footer>
+
+  <div class="modal hidden" id="sourceModal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModal">✕</button>
+
+      <h2>How This Was Built</h2>
+      <p>
+        This project is intentionally built with plain HTML, CSS, and JavaScript
+        to demonstrate core frontend fundamentals.
+      </p>
+
+      <ul class="source-list">
+        <li><strong>HTML:</strong> Semantic sections for structure and accessibility.</li>
+        <li><strong>CSS:</strong> Design tokens, grid/flex layouts, and CSS variables for theming.</li>
+        <li><strong>JavaScript:</strong> State-driven UI, event handling, and IntersectionObserver.</li>
+        <li><strong>Performance:</strong> No frameworks, minimal DOM updates.</li>
+      </ul>
+
+      <p>
+        The goal is clarity, maintainability, and real-world decision making —
+        not abstractions.
+      </p>
+    </div>
+  </div>
+
+  <!-- Sitemap Reference -->
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  
+  <script src="script.js"></script>
+</body>
+</html>
