@@ -1,13 +1,10 @@
-// ===== script.js =====
 
-/* Scroll Progress Bar */
 const scrollProgressBar = document.getElementById('scrollProgressBar');
 window.addEventListener('scroll', () => {
   const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
   scrollProgressBar.style.width = scrollPercentage + '%';
 });
 
-/* Scroll Reveal */
 const sections = document.querySelectorAll('.step');
 
 const observer = new IntersectionObserver(entries => {
@@ -20,7 +17,6 @@ const observer = new IntersectionObserver(entries => {
 
 sections.forEach(section => observer.observe(section));
 
-/* Decision Interaction */
 const buttons = document.querySelectorAll('[data-choice]');
 const result = document.getElementById('decision-result');
 
@@ -33,7 +29,7 @@ buttons.forEach(btn => {
       : 'Desktop-first can speed up initial design but risks mobile usability.';
   });
 });
-/* Bug Fix Demo */
+
 const fixBtn = document.getElementById('fixBugBtn');
 const demoNav = document.getElementById('demoNav');
 const bugResult = document.getElementById('bugResult');
@@ -44,13 +40,12 @@ fixBtn.addEventListener('click', () => {
     'Bug fixed: incorrect flex alignment removed, restoring proper navigation layout.';
   bugResult.style.display = 'block';
 });
-/* Component Playground */
+
 const animToggle = document.getElementById('animToggle');
 const toggleSwitch = document.getElementById('toggleSwitch');
 const toggleStatus = document.getElementById('toggleStatus');
 const playgroundResult = document.getElementById('playgroundResult');
 
-// Animation toggle
 animToggle.addEventListener('change', () => {
   const root = document.documentElement;
   if (animToggle.checked) {
@@ -64,7 +59,7 @@ animToggle.addEventListener('change', () => {
   playgroundResult.style.display = 'block';
 });
 
-// Toggle switch interaction
+
 toggleSwitch.addEventListener('change', () => {
   toggleStatus.textContent = toggleSwitch.checked ? 'Enabled' : 'Disabled';
   playgroundResult.textContent = toggleSwitch.checked
@@ -73,7 +68,6 @@ toggleSwitch.addEventListener('change', () => {
   playgroundResult.style.display = 'block';
 });
 
-// Button interactions
 const componentButtons = document.querySelectorAll('.ui-btn:not([disabled])');
 componentButtons.forEach((btn) => {
   if (!btn.hasListener) {
@@ -93,7 +87,6 @@ componentButtons.forEach((btn) => {
   }
 });
 
-// Form interaction
 const inputs = document.querySelectorAll('input[type="text"], textarea');
 inputs.forEach((input) => {
   input.addEventListener('focus', () => {
@@ -102,7 +95,6 @@ inputs.forEach((input) => {
   });
 });
 
-// Checkbox interaction
 const checkboxes = document.querySelectorAll('input[type="checkbox"]:not(#animToggle):not(#toggleSwitch)');
 checkboxes.forEach((cb) => {
   cb.addEventListener('change', () => {
@@ -110,11 +102,9 @@ checkboxes.forEach((cb) => {
     playgroundResult.style.display = 'block';
   });
 });
-/* Dark / Light Mode */
+
 const themeToggle = document.getElementById('themeToggle');
 const root = document.documentElement;
-
-// load saved theme
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
   root.setAttribute('data-theme', savedTheme);
@@ -130,7 +120,6 @@ themeToggle.addEventListener('click', () => {
   themeToggle.textContent = newTheme === 'light' ? '☀️' : '🌙';
 });
 
-/* How This Was Built Modal */
 const howBuiltBtn = document.getElementById('howBuiltBtn');
 const viewSourceBtn = document.getElementById('viewSourceBtn');
 const sourceModal = document.getElementById('sourceModal');
@@ -153,7 +142,6 @@ closeModal.addEventListener('click', () => {
   sourceModal.setAttribute('aria-hidden', 'true');
 });
 
-/* Copy to Clipboard */
 const copyButtons = document.querySelectorAll('.copy-btn');
 copyButtons.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -171,7 +159,6 @@ copyButtons.forEach(btn => {
   });
 });
 
-/* Form Validation Demo */
 const validationForm = document.getElementById('validationForm');
 const passwordInput = document.getElementById('passwordInput');
 const passwordStrength = document.getElementById('passwordStrength');
@@ -222,7 +209,6 @@ if (validationForm) {
   });
 }
 
-/* Loading States Demo */
 const loadDataBtn = document.getElementById('loadDataBtn');
 const skeletonCard = document.getElementById('skeletonCard');
 const loadedCard = document.getElementById('loadedCard');
@@ -241,9 +227,8 @@ if (loadDataBtn) {
   });
 }
 
-/* Keyboard Shortcuts */
 document.addEventListener('keydown', (e) => {
-  // Ctrl/Cmd + K to focus search/scroll to top
+  // Ctrl/Cmd + K to focus search/scroll to to
   if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -256,19 +241,14 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-/* Error Boundary Simulation */
 window.addEventListener('error', (event) => {
   console.error('Error caught:', event.message);
-  // Could send to error tracking service
 });
 
-/* Analytics Tracking */
 const trackEvent = (eventName, eventData = {}) => {
-  console.log(`📊 Event: ${eventName}`, eventData);
-  // In production, send to analytics service (Google Analytics, Mixpanel, etc.)
+  console.log(`📊 Event: ${eventName}`, eventData);  
 };
 
-// Track section views
 const sectionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -282,7 +262,6 @@ document.querySelectorAll('section.step').forEach(section => {
   sectionObserver.observe(section);
 });
 
-/* Debug Gallery Data */
 const debugCases = [
   {
     title: 'Button not clickable',
@@ -346,7 +325,6 @@ debugCases.forEach((item, index) => {
     <p class="result" id="${resultId}"></p>
   `;
 
-  // For the "Button not clickable" demo, add a sample button with an overlay
   if (item.title === 'Button not clickable') {
     const wrapper = document.createElement('div');
     wrapper.className = 'sample-wrapper';
@@ -361,7 +339,6 @@ debugCases.forEach((item, index) => {
     overlay.className = 'sample-overlay';
     overlay.textContent = 'Not clickable';
 
-    // Clicking the overlay should show why it's not clickable
     overlay.addEventListener('click', () => {
       const res = document.getElementById(resultId);
       res.textContent = 'This button is disabled due to a stray "disabled" attribute.';
@@ -373,7 +350,6 @@ debugCases.forEach((item, index) => {
     card.appendChild(wrapper);
   }
 
-  // Layout overflow on mobile: fixed-width box that can cause horizontal scroll
   if (item.title === 'Layout overflow on mobile') {
     const wrapper = document.createElement('div');
     wrapper.className = 'sample-wrapper overflow-sample';
@@ -396,7 +372,6 @@ debugCases.forEach((item, index) => {
     card.appendChild(wrapper);
   }
 
-  // Text not visible: sample text with same color as background
   if (item.title === 'Text not visible') {
     const wrapper = document.createElement('div');
     wrapper.className = 'sample-wrapper';
@@ -420,7 +395,6 @@ debugCases.forEach((item, index) => {
     card.appendChild(wrapper);
   }
 
-  // Hover animation lag: heavy box-shadow animation
   if (item.title === 'Hover animation lag') {
     const wrapper = document.createElement('div');
     wrapper.className = 'sample-wrapper';
@@ -443,11 +417,10 @@ debugCases.forEach((item, index) => {
     card.appendChild(wrapper);
   }
 
-  // Navbar misalignment: small nav demonstrating broken justify-content
+
   if (item.title === 'Navbar misalignment') {
     const wrapper = document.createElement('div');
     wrapper.className = 'sample-wrapper';
-
     const nav = document.createElement('nav');
     nav.className = 'demo-nav nav-broken';
     nav.id = `nav-sample-${index}`;
@@ -467,7 +440,7 @@ debugCases.forEach((item, index) => {
     card.appendChild(wrapper);
   }
 
-  // Form submit reloads page: sample form that will be fixed to prevent reload
+
   if (item.title === 'Form submit reloads page') {
     const wrapper = document.createElement('div');
     wrapper.className = 'sample-wrapper form-sample';
@@ -490,7 +463,6 @@ debugCases.forEach((item, index) => {
     card.appendChild(wrapper);
   }
 
-  // Image stretching: sample img without object-fit
   if (item.title === 'Image stretching') {
     const wrapper = document.createElement('div');
     wrapper.className = 'sample-wrapper img-sample';
@@ -515,7 +487,7 @@ debugCases.forEach((item, index) => {
     card.appendChild(wrapper);
   }
 
-  // Dark mode not persisting: sample toggle that doesn't persist until fixed
+
   if (item.title === 'Dark mode not persisting') {
     const wrapper = document.createElement('div');
     wrapper.className = 'sample-wrapper theme-sample';
@@ -543,7 +515,7 @@ debugCases.forEach((item, index) => {
     card.appendChild(wrapper);
   }
 
-  // Animation ignores reduced motion: sample animated element
+
   if (item.title === 'Animation ignores reduced motion') {
     const wrapper = document.createElement('div');
     wrapper.className = 'sample-wrapper motion-sample';
@@ -578,7 +550,7 @@ debugList.addEventListener('click', (e) => {
   result.textContent = `Fix applied: ${debugCases[i].fix}`;
   result.style.display = 'block';
 
-  // If the fixed case is the sample button, enable it and remove overlay
+
   if (debugCases[i].title === 'Button not clickable') {
     const sample = document.getElementById(`sample-btn-${i}`);
     if (sample) {
@@ -588,7 +560,7 @@ debugList.addEventListener('click', (e) => {
       const overlay = wrapper && wrapper.querySelector('.sample-overlay');
       if (overlay) overlay.remove();
 
-      // attach real click behavior
+
       sample.addEventListener('click', () => {
         result.textContent = 'Sample button clicked — interaction restored.';
         result.style.display = 'block';
@@ -596,7 +568,6 @@ debugList.addEventListener('click', (e) => {
     }
   }
 
-  // Layout overflow: remove fixed-width class
   if (debugCases[i].title === 'Layout overflow on mobile') {
     const box = document.querySelector('.overflow-box.fixed-width');
     if (box) {
@@ -606,7 +577,6 @@ debugList.addEventListener('click', (e) => {
     }
   }
 
-  // Text not visible: remove hidden-text class
   if (debugCases[i].title === 'Text not visible') {
     const txt = document.getElementById(`sample-text-${i}`);
     if (txt) {
@@ -616,7 +586,6 @@ debugList.addEventListener('click', (e) => {
     }
   }
 
-  // Hover animation lag: switch to transform-based hover
   if (debugCases[i].title === 'Hover animation lag') {
     const box = document.querySelector('.anim-box.heavy-shadow');
     if (box) {
@@ -627,7 +596,6 @@ debugList.addEventListener('click', (e) => {
     }
   }
 
-  // Navbar misalignment: restore justify-content
   if (debugCases[i].title === 'Navbar misalignment') {
     const nav = document.querySelector('.demo-nav.nav-broken');
     if (nav) {
@@ -637,7 +605,6 @@ debugList.addEventListener('click', (e) => {
     }
   }
 
-  // Form submit reloads page: attach preventDefault and remove overlay
   if (debugCases[i].title === 'Form submit reloads page') {
     const form = document.getElementById(`sample-form-${i}`);
     if (form) {
@@ -652,7 +619,6 @@ debugList.addEventListener('click', (e) => {
     }
   }
 
-  // Image stretching: apply object-fit: cover
   if (debugCases[i].title === 'Image stretching') {
     const img = document.getElementById(`sample-img-${i}`);
     if (img) {
@@ -662,7 +628,6 @@ debugList.addEventListener('click', (e) => {
     }
   }
 
-  // Dark mode not persisting: save preference to localStorage
   if (debugCases[i].title === 'Dark mode not persisting') {
     const tbtn = document.getElementById(`theme-sample-btn-${i}`);
     if (tbtn) {
@@ -678,7 +643,6 @@ debugList.addEventListener('click', (e) => {
     }
   }
 
-  // Animation ignores reduced motion: add class to respect reduced motion
   if (debugCases[i].title === 'Animation ignores reduced motion') {
     const bar = document.querySelector('.motion-bar');
     if (bar) {
