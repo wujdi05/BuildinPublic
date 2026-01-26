@@ -1,6 +1,4 @@
-/* ===== style.css ===== */
 
-/* Accessibility - Skip to Content Link */
 .skip-to-content {
   position: absolute;
   top: -40px;
@@ -51,7 +49,6 @@ body {
   line-height: 1.6;
 }
 
-/* Scroll Progress Bar */
 .scroll-progress-bar {
   position: fixed;
   top: 0;
@@ -165,7 +162,7 @@ button:active {
   margin-top: 1.5rem;
   display: none;
 }
-/* Bug demo */
+
 .demo-nav {
   display: flex;
   justify-content: space-between;
@@ -175,7 +172,6 @@ button:active {
   margin-top: 2rem;
 }
 
-/* Simulated bug */
 .demo-nav.broken {
   justify-content: center;
 }
@@ -189,7 +185,6 @@ button:active {
   margin-top: 1rem;
   color: var(--accent);
 }
-/* Component Playground */
 .playground-controls {
   display: flex;
   gap: 1rem;
@@ -248,7 +243,7 @@ button:active {
   cursor: pointer;
   color: var(--muted);
 }
-/* Component Playground */
+
 .component-group {
   margin-top: 2rem;
   padding: 1.5rem;
@@ -476,7 +471,7 @@ button:active {
   border-radius: 4px;
   transition: width 0.6s ease;
 }
-/* Accessibility & Performance */
+
 .insight-list {
   margin-top: 2rem;
   padding-left: 1.25rem;
@@ -511,7 +506,7 @@ button:active {
   align-items: center;
   justify-content: center;
 }
-/* View source modal */
+
 .view-source-btn {
   display: block;
   margin: 4rem auto 0;
@@ -577,7 +572,6 @@ button:active {
   }
 }
 
-/* Projects Grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -639,7 +633,6 @@ button:active {
   text-decoration: underline;
 }
 
-/* Metrics Grid */
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -677,7 +670,6 @@ button:active {
   font-size: 2rem;
 }
 
-/* Code Snippets */
 .code-snippet-group {
   margin-top: 2rem;
   display: grid;
@@ -781,7 +773,6 @@ button:active {
   min-width: 120px;
 }
 
-/* Animation Gallery */
 .animation-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -856,7 +847,6 @@ button:active {
   animation: scale 1s ease-in-out infinite;
 }
 
-/* Form Validation Demo */
 .validation-demo {
   background: rgba(255, 255, 255, 0.02);
   padding: 1.5rem;
@@ -987,7 +977,6 @@ button:active {
   display: none;
 }
 
-/* Accessibility Checklist */
 .checklist {
   margin-top: 1.5rem;
   display: grid;
@@ -1015,7 +1004,6 @@ button:active {
   color: var(--fg);
 }
 
-/* Testing Showcase */
 .test-showcase {
   display: grid;
   gap: 1.5rem;
@@ -1052,7 +1040,6 @@ button:active {
   color: var(--fg);
 }
 
-/* Testimonials */
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1089,7 +1076,6 @@ button:active {
   color: var(--muted);
 }
 
-/* Skills Matrix */
 .skills-matrix {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1138,7 +1124,6 @@ button:active {
   color: #fb923c;
 }
 
-/* Footer */
 .footer {
   background: rgba(0, 0, 0, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -1214,7 +1199,7 @@ button:active {
     gap: 1.5rem;
   }
 }
-/* Debug Gallery */
+
 .debug-list {
   display: grid;
   gap: 1.5rem;
@@ -1244,14 +1229,12 @@ button:active {
   margin-top: 0.5rem;
 }
 
-/* Sample demo wrapper for not-clickable button */
 .sample-wrapper {
   position: relative;
   display: inline-block;
   margin-top: 0.75rem;
 }
 
-/* Make sample content responsive and prevent overflowing text */
 .sample-wrapper {
   max-width: 100%;
   width: 100%;
@@ -1290,7 +1273,6 @@ button:active {
   pointer-events: auto;
 }
 
-/* Overflow sample */
 .overflow-sample .overflow-box {
   background: rgba(255,255,255,0.03);
   padding: 1rem;
@@ -1302,14 +1284,12 @@ button:active {
   white-space: normal;
 }
 
-/* Hidden text sample */
 .hidden-text {
   color: var(--bg); /* matches background to simulate invisibility */
   max-width: 100%;
   overflow-wrap: anywhere;
 }
 
-/* Heavy shadow animation */
 .anim-box {
   padding: 0.75rem 1rem;
   border-radius: 6px;
@@ -1326,13 +1306,11 @@ button:active {
   box-shadow: 0 10px 25px rgba(56,189,248,0.18);
 }
 
-/* Nav broken sample */
 .nav-broken {
   justify-content: center !important;
   outline: 1px dashed #f87171;
 }
 
-/* Form sample */
 .form-sample form {
   display: flex;
   gap: 0.5rem;
@@ -1350,7 +1328,6 @@ button:active {
   color: var(--fg);
 }
 
-/* Image sample */
 .img-sample img {
   width: 100%;
   height: auto;
@@ -1360,12 +1337,10 @@ button:active {
   max-width: 100%;
 }
 
-/* Theme sample */
 .theme-sample button {
   padding: 0.5rem 0.75rem;
 }
 
-/* Motion sample */
 .motion-bar {
   width: 180px;
   height: 28px;
