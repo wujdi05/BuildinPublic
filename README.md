@@ -76,7 +76,7 @@ Hi! I'm Wujdi – a front-end developer who likes building things transparently.
 
 **Links:**
 - [Full Portfolio](https://aderm9392-png.github.io/wujdiportfolio.github.io/)
-- [GitHub](https://github.com)
+- [GitHub](https://github.com/aderm9392-png)
 - [Twitter/X](https://twitter.com/@WujdiDev)
 - [LinkedIn](https://www.linkedin.com/in/wujdi-mustapha-adam-51a0b92b4)
 
